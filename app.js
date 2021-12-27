@@ -21,12 +21,19 @@ mouse.y = e.y
 for(let i = 0; i < 10; i++)
 particlesArray.push(new Particle())
 })
-canvas.addEventListener('mousemove' || 'touchmove', function(e){
+canvas.addEventListener('mousemove', function(e){
     mouse.x = e.x
     mouse.y = e.y
     for(let i = 0; i < 5; i++)
     particlesArray.push(new Particle())
 })
+canvas.addEventListener('touchmove', function(e){
+    mouse.x = e.x
+    mouse.y = e.y
+    for(let i = 0; i < 5; i++)
+    particlesArray.push(new Particle())
+})
+
 
 class Particle{
     constructor(){
