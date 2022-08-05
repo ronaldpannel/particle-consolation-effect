@@ -11,35 +11,35 @@ window.addEventListener('resize', function(){
     canvas.width = window.innerWidth 
     canvas.height = window.innerHeight    
 })
-const mouse ={
+const pointer ={
     x: undefined,
     y: undefined
 }
 canvas.addEventListener('click', function(e){
-mouse.x = e.x
-mouse.y = e.y
+pointer.x = e.x
+pointer.y = e.y
 for(let i = 0; i < 10; i++)
 particlesArray.push(new Particle())
 })
-canvas.addEventListener('mousemove', function(e){
-    mouse.x = e.x
-    mouse.y = e.y
-    for(let i = 0; i < 5; i++)
-    particlesArray.push(new Particle())
-})
-canvas.addEventListener('touchmove', function(e){
+// canvas.addEventListener('pointermove', function(e){
+//     pointer.x = e.x
+//     pointer.y = e.y
+//     for(let i = 0; i < 5; i++)
+//     particlesArray.push(new Particle())
+// })
+canvas.addEventListener('pointermove', function(e){
     e.preventDefault()
     console.log(e)
-    mouse.x = e.x
-    mouse.y = e.y
+    pointer.x = e.x
+    pointer.y = e.y
     for(let i = 0; i < 5; i++)
     particlesArray.push(new Particle())
 })
 
 class Particle{
     constructor(){
-        this.x = mouse.x,
-        this.y = mouse.y
+        this.x = pointer.x,
+        this.y = pointer.y
         this.size = Math.random() * 15 + 1
         this.speedX = Math.random()* 3 - 1.5
         this.speedY = Math.random()* 3 - 1.5
